@@ -22,7 +22,7 @@ const Layout = ({ children }: any): JSX.Element => {
 
           {children}
         </PersistGate>
-        <Toaster />
+        <Toaster position="top-right" />
       </Provider>
     </>
   );

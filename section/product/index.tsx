@@ -33,8 +33,8 @@ export function ProductList() {
 
     if (filteredArray === -1) {
       dispatch(productArrayFunc(product));
-      toast.success("Item Successfully");
-    } else toast.error("Item already Exists");
+      toast.success("Product Added Successfully");
+    } else toast.error("Product already Exists");
   };
 
   const productListFunc = () => {

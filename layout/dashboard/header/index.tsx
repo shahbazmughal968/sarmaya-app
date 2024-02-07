@@ -6,12 +6,24 @@ import { useSelector } from "@/store/store";
 
 const navigation = [
   {
-    name: "Category",
+    name: "Home",
     href: "/",
   },
   {
-    name: "All Product",
-    href: "/product",
+    name: "Men",
+    href: `/product?category=${"men's clothing"}&name=Men Category`,
+  },
+  {
+    name: "Women",
+    href: `/product?category=${"women's clothing"}&name=Women Category`,
+  },
+  {
+    name: "Electronics",
+    href: `/product?category=${"electronics"}&name=Electronics`,
+  },
+  {
+    name: "Jewelry",
+    href: `/product?category=${"jewelery"}&name=Jewelry`,
   },
 ];
 
@@ -20,19 +32,14 @@ export function Header() {
   const cartData = useSelector((state) => state);
 
   return (
-    <header className="bg-black fixed inset-x-0 top-0 z-50 text-white">
+    <header className="bg-slate-50 fixed inset-x-0 top-0 z-50 text-black shadow-lg">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">E Commerce</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+          <Link href="/" className="-m-1.5 p-1.5 text-2xl font-bold">
+            Sarmaaya
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -58,7 +65,7 @@ export function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="/cart" className="leading-6">
-            <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+            <span className="inline-flex items-center rounded-md  px-2 py-1 text-xs font-medium text-black   ">
               {" "}
               <span className="mr-1 text-lg">
                 {cartData?.product?.productArray.length}

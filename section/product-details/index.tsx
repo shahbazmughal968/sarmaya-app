@@ -22,34 +22,10 @@ export function ProductDetails({ id }: any) {
     } else toast.error("Item already Exists");
   };
 
-  if (isLoading) {
-    return (
-      <div className="border shadow rounded-md p-4 w-full mx-auto">
-        <h1 className="mb-3 text-2xl font-semibold">Products Details</h1>
-
-        <div className="animate-pulse flex space-x-4">
-          <div className="flex-1 space-y-6 py-1">
-            <div className="h-2 bg-slate-200 rounded"></div>
-            <div className="space-y-3">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="h-20 bg-slate-200 rounded col-span-2"></div>
-                <div className="h-20 bg-slate-200 rounded col-span-1"></div>
-              </div>
-              <div className="h-2 bg-slate-200 rounded"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
   return (
     <div className="h-full">
-      <h1 className="mb-3 text-2xl font-semibold">Product Details</h1>
-      <button>
-        <Link href={"/product"}>Back</Link>
-      </button>
-      <div className="flex justify-start flex-row mt-10 align-middle h-100">
-        <div className="border w-full p-4">
+      <div className=" mt-10 align-middle h-100">
+        <div className=" w-full p-4">
           <img
             src={data?.image}
             alt="product image"
@@ -74,7 +50,7 @@ export function ProductDetails({ id }: any) {
           </div>
           <div className="p-3">
             <button
-              className="w-full bg-black p-4 rounded-md text-white"
+              className=" bg-black p-4 rounded-full text-white"
               onClick={addToCart}
             >
               <div className="flex align-middle justify-center">

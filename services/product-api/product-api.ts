@@ -9,8 +9,8 @@ export const ProductApi = baseApi.injectEndpoints({
       }),
     }),
     productList: builder.query({
-      query: ({ cat }) => ({
-        url: `products/category/${cat}`,
+      query: ({ category }) => ({
+        url: `products/category/${category}`,
         method: "GET",
       }),
     }),

@@ -18,14 +18,7 @@ export function Cart() {
       <h1 className="mb-3 text-2xl font-semibold">Cart</h1>
       {cartData?.productArray.length > 0 ? (
         <div className="grid grid-cols-3 gap-4" style={{ width: "100%" }}>
-          <div className="p-2 border col-span-2 rounded-md">
-            {/* <div className="flex justify-between shadow-md p-4 rounded-md items-center">
-              <h5 className="text-justify"></h5>
-              <h4>Name</h4>
-              <h4>Price</h4>
-              <h4>Quantity</h4>
-              <h4>Action</h4>
-            </div> */}
+          <div className="p-2  col-span-2 rounded-md">
             {cartData?.productArray?.map((item: any, index: number) => {
               return (
                 <div
@@ -39,7 +32,7 @@ export function Cart() {
                   <h4>{item?.price}</h4>
                   <div>
                     <button
-                      className="min-w-7 bg-black text-white rounded-md mr-1"
+                      className="text-black  mr-1 font-extrabold text-2xl"
                       onClick={() => {
                         dispatch(decreaseQuantity(item));
                       }}
@@ -49,7 +42,7 @@ export function Cart() {
                     </button>
                     {item?.totalQuantity}
                     <button
-                      className="min-w-7 bg-black text-white rounded-md ml-1"
+                      className="text-black  ml-1 font-extrabold text-2xl"
                       onClick={() => {
                         dispatch(increaseQuantity(item));
                       }}
@@ -58,7 +51,7 @@ export function Cart() {
                     </button>
                   </div>
                   <button
-                    className="min-w-7 p-2 bg-red-500 text-white rounded-md ml-1"
+                    className="min-w-7 p-2 bg-red-800 text-white rounded-md ml-1"
                     onClick={() => {
                       dispatch(deleteProduct(item.id));
                     }}
@@ -69,7 +62,7 @@ export function Cart() {
               );
             })}
           </div>
-          <div className="p-2 border  rounded-md flex flex-col justify-between">
+          <div className="p-2  flex flex-col">
             <h1>
               Total Price:
               {cartData?.productArray
@@ -79,7 +72,7 @@ export function Cart() {
                 .toFixed(2)}
             </h1>
             <button
-              className="mt-3 w-full bg-black p-4 rounded-md text-white"
+              className="mt-3 w-full bg-black p-4 rounded-full text-white"
               onClick={() => {
                 toast.success("Confirm purchase");
               }}
